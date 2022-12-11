@@ -272,6 +272,12 @@ img[alt="Healthy villi vs celiac villi"] {
     }
 }
 
+@media (max-width: 600px) {
+    #products {
+        grid-template-columns: 100%;
+    }
+}
+
 #contact {
     display: inline-block;
     background-color: #E6e6e6;

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/aob_logo.ico" type="image/x-icon">
-    <title>afraidofbread</title>
+    <title>contact us</title>
 </head>
 <body>
     <header>
@@ -19,21 +19,28 @@
             <li><a href="contact.html">contact us</a></li>
         </ul>
     </header>
+
     <main class="flex">
-        <div id="title" class="lines">
-            <h1>afraid of</h1>
-            <h1>bread.</h1>
-        </div>
-        <div id="signup">
-            <div id="newsletter" class="lines">
-                <h2>Sign up for our</h2>
-                <h2>Newsletter</h2>
+        <form id="contact">
+            <h1> Contact Us</h1>
+
+            <div>
+            <label for="name">name:</label>
+            <input type="text" id="name" name="submitted-name" autocomplete="name">
             </div>
-            <form>
-                <input type="email" placeholder=" email">
-            </form>
-            <button id="subscribe">SUBSCRIBE</button>
-        </div>
+
+            <div>
+            <label for="email">email:</label>
+            <input type="email" id="email" name="submitted-email" autocomplete="email">
+            </div>
+
+            <div>
+            <label>message:</label>
+            <textarea name="message"></textarea>
+            </div>
+
+            <button>SUBMIT</button>
+        </form>
     </main>
 </body>
 </html>

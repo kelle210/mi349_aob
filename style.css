@@ -50,6 +50,7 @@ main {
 
 .flex {
     display: flex;
+    width: 100%;
 }
 
 #signup {
@@ -66,9 +67,15 @@ main {
     margin-top: 15%;
 }
 
-input {
+input, textarea {
     background-color: #d8d4d4;
     border-color: #3E3324;
+}
+
+button {
+    background-color: #3E3324;
+    color: #E6e6e6;
+    font-family: 'Inria', serif;
 }
 
 #signup input {
@@ -80,9 +87,6 @@ input {
 }
 
 #subscribe {
-    background-color: #3E3324;
-    color: #E6e6e6;
-    font-family: 'Inria', serif;
     font-size: 150%;
     height: 10%;
     width: 50%;
@@ -106,7 +110,7 @@ input {
 
 img[alt="Healthy villi vs celiac villi"] {
     float: right;
-    height: 250px;
+    height: 150px;
     margin-left: 5%;
     margin-top: 1%;
     border-radius: 25px;
@@ -116,6 +120,7 @@ img[alt="Healthy villi vs celiac villi"] {
     width: 40%;
     text-align: center;
     margin: 0 auto;
+    margin-bottom: 5%;
 }
 
 #products_title:before {
@@ -141,49 +146,224 @@ img[alt="Healthy villi vs celiac villi"] {
 }
 
 
+/* https://www.w3schools.com/howto/howto_css_flip_card.asp */
+
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.flip-card {
+.flip-card-white{
     background-color: transparent;
     width: 300px;
-    height: 200px;
-    border: 1px solid #f1f1f1;
+    height: 525px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
-  
-  /* This container is needed to position the front and back side */
-  .flip-card-inner {
+}
+
+.flip-card-pink {
+    background-color: transparent;
+    width: 300px;
+    height: 350px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-  }
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:hover .flip-card-inner {
+
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card-white:hover .flip-card-inner,  .flip-card-pink:hover .flip-card-inner{
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
-  }
-  
-  /* Position the front and back side */
-  .flip-card-front, .flip-card-back {
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-  }
-  
-  /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  }
-  
-  /* Style the back side */
-  .flip-card-back {
-    background-color: dodgerblue;
-    color: white;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-white .flip-card-front {
+    background-color: #e6e6e6;
+    color: #3E3324;
+
+}
+
+/* Style the back side */
+.flip-card-white .flip-card-back {
+    background-color: #e6e6e6;
+    color: #3E3324;
+
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
-  }
-  
+}
+
+.flip-card-pink .flip-card-front {
+    background-color: #d8d4d4;
+    color: #3E3324;
+}
+
+/* Style the back side */
+.flip-card-pink .flip-card-back {
+    background-color: #d8d4d4;
+    color: #3E3324;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+
+
+.product_image {
+    margin-top: 10%;
+    height: 50%;
+}
+
+.product_caption {
+    font-size: 150%;
+    margin: 10%;
+}
+
+.product_description {
+    margin: 10%;
+    font-size: 115%;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 15px;
+    justify-content: space-between;
+    justify-items: center;
+    align-content: space-between;
+}
+
+.product_white {
+    grid-row-end: span 3;
+}
+
+.product_pink {
+    grid-row-end: span 2;
+}
+
+#cup4cup {
+    order: 1;
+}
+
+@media (min-width: 1400px) {
+    #products {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media (max-width: 910px) {
+    #products {
+        grid-template-columns: 50% 50%;
+    }
+    #cup4cup {
+        order:0;
+    }
+}
+
+#contact {
+    display: inline-block;
+    background-color: #E6e6e6;
+    width: 25%;
+    padding: 7% 12% 7% 12%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+label {
+    font-size: 120%;
+    display: block;
+    width: min-content;
+}
+
+#contact h1 {
+    font-size: 250%;
+    margin-top: 0;
+}
+
+
+#contact div input {
+    display: inline;
+    width: 100%;
+    height: 30px;
+}
+
+#contact div {
+    margin-top: 8%;
+}
+
+#contact button {
+    margin-top: 7%;
+    width: 85%;
+    height: 13%;
+    font-size: 130%;
+}
+
+
+textarea {
+    width: 100%;
+    height: 70px;
+    border-width: 2px;
+}
+
+
+
+.card {
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    margin: 15% auto;
+    width: 40%;
+    height: 50%;
+    text-align: center;
+    box-shadow: rgba(0,0,0,0.1) 0 10px 10px;
+    border: 1px solid #aaa;
+}
+
+.card .avatar {
+    box-shadow: rgba(0,0,0,0.1) 0 10px 10px;
+    width: 35%;
+    border-radius: 50%;
+    margin-top: -120px;
+}
+
+.contacts {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.contacts li img{
+    width: 30px;
+    padding: 20px 10px;
+}
+
+.contacts li {
+    display: inline-block;
+}
+
+.contacts li a img:hover {
+    opacity: 0.5;
+    transition: opacity ease-in-out 0.2s;
+}
+
+#info {
+    width: 50%;
+    font-size: 140%;
+    text-align: justify;
+    margin-right: 4%;
+}
+
+#info p {
+    margin-top: 9%;
+}

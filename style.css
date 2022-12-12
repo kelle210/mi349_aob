@@ -330,7 +330,7 @@ textarea {
     border-radius: 15px;
     margin: 15% auto;
     width: 40%;
-    height: 50%;
+    height: 55%;
     text-align: center;
     box-shadow: rgba(0,0,0,0.1) 0 10px 10px;
     border: 1px solid #aaa;
@@ -364,10 +364,11 @@ textarea {
 }
 
 #info {
-    width: 50%;
+    width: 440px;
     font-size: 140%;
     text-align: justify;
-    margin-right: 4%;
+    margin-right: 8%;
+    margin-left: 8%;
 }
 
 #info p {
